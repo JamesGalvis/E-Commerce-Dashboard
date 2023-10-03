@@ -1,10 +1,10 @@
-import { UserButton, auth } from "@clerk/nextjs"
-import { db } from "@/lib/db"
-import { redirect } from "next/navigation"
+import { UserButton, auth } from '@clerk/nextjs'
+import { db } from '@/lib/db'
+import { redirect } from 'next/navigation'
 
-import { ModeToggle } from "@/components/mode-toggle"
-import { MainNav } from "@/components/main-nav"
-import { StoreSwitcher } from "@/components/store-switcher"
+import { ModeToggle } from '@/components/mode-toggle'
+import { MainNav } from '@/components/main-nav'
+import { StoreSwitcher } from '@/components/store-switcher'
 
 export async function Navbar() {
   const { userId } = auth()
@@ -13,8 +13,8 @@ export async function Navbar() {
 
   const stores = await db.store.findMany({
     where: {
-      userId
-    }
+      userId,
+    },
   })
 
   return (

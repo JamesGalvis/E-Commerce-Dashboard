@@ -11,7 +11,12 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { Button } from '@/components/ui/button'
-import { Check, ChevronsUpDown, PlusCircle, Store as StoreIcon } from 'lucide-react'
+import {
+  Check,
+  ChevronsUpDown,
+  PlusCircle,
+  Store as StoreIcon,
+} from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
   Command,
@@ -21,7 +26,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from './ui/command'
+} from '@/components/ui/command'
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 
@@ -78,7 +83,7 @@ export function StoreSwitcher({ items, className }: StoreSwitcherProps) {
                 <CommandItem
                   key={store.value}
                   onSelect={() => onStoreSelect(store)}
-                  className="text-sm"
+                  className="cursor-pointer text-sm"
                 >
                   <StoreIcon className="h-4 w-4 mr-2" />
                   {store.label}
@@ -102,8 +107,9 @@ export function StoreSwitcher({ items, className }: StoreSwitcherProps) {
                   setOpen(false)
                   storeModal.onOpen()
                 }}
+                className="cursor-pointer"
               >
-                <PlusCircle className='h-5 w-5 mr-2' />
+                <PlusCircle className="h-5 w-5 mr-2" />
                 Create Store
               </CommandItem>
             </CommandGroup>
