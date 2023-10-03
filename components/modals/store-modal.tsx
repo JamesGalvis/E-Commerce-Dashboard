@@ -67,8 +67,10 @@ export function StoreModal() {
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input
+                    autoComplete='off'
                     disabled={isLoading}
                     placeholder="E-commerce name..."
+                    className='focus-visible:ring-transparent'
                     {...field}
                   />
                 </FormControl>
