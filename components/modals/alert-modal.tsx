@@ -1,6 +1,5 @@
 "use client"
 
-import { useStoreModal } from "@/hooks/use-store-modal"
 import { Modal } from "../ui/modal"
 import { Button } from "../ui/button"
 
