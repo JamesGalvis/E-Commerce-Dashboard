@@ -1,20 +1,26 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import { Heading } from "@/components/ui/heading"
-import { Separator } from "@/components/ui/separator"
-import { Plus } from "lucide-react"
-import { useParams, useRouter } from "next/navigation"
+import { useParams, useRouter } from 'next/navigation'
 
-export function BillboardClient() {
+import { Button } from '@/components/ui/button'
+import { Heading } from '@/components/ui/heading'
+import { Separator } from '@/components/ui/separator'
+import { Plus } from 'lucide-react'
+import { ApiList } from '@/components/ui/api-list'
+
+import { BillboardColumn, columns } from './columns'
+import { DataTable } from '@/components/ui/data-table'
+
+export function BillboardClient({ data }: { data: BillboardColumn[] }) {
   const router = useRouter()
   const params = useParams()
+  const billboardsCount = data.length
 
   return (
     <>
       <div className="flex items-center justify-between">
-        <Heading 
-          title="Billboard (0)"
+        <Heading
+          title={`Billboards (${billboardsCount})`}
           description="Manage billboards for your store"
         />
         <Button
@@ -25,6 +31,10 @@ export function BillboardClient() {
         </Button>
       </div>
       <Separator />
+      <DataTable columns={columns} data={data} searchKey='label' />
+      <Heading title='API' description='API calls for billboards' />
+      <Separator />
+      <ApiList entityName='billboards' entityIdName='billboardId' />
     </>
   )
 }

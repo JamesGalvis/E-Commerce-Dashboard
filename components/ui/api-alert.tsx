@@ -41,11 +41,11 @@ export function ApiAlert({
 
   return (
     <Alert>
-        <AlertTitle className="flex items-center gap-x-2">
-          <Server className="h-4 w-4" />
-          {title}
-          <Badge variant={variantMap[variant]}>{textMap[variant]}</Badge>
-        </AlertTitle>
+      <AlertTitle className="flex items-center gap-x-2">
+        <Server className="h-4 w-4" />
+        {title}
+        <Badge variant={variantMap[variant]}>{textMap[variant]}</Badge>
+      </AlertTitle>
       <AlertDescription className="flex items-center justify-between mt-4">
         <code className="relative text-sm font-semibold font-mono rounded bg-muted px-[0.4rem] py-[0.2rem]">
           {description}
