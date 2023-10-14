@@ -18,7 +18,7 @@ export async function GET(
 
     return NextResponse.json(billboard)
   } catch (error) {
-    console.log('[BILLBOARDS_UPDATE]', error)
+    console.log('[BILLBOARD_GET]', error)
     return new NextResponse('Internal error', { status: 500 })
   }
 }
@@ -62,7 +62,7 @@ export async function PATCH(
 
     return NextResponse.json(billboard)
   } catch (error) {
-    console.log('[BILLBOARDS_UPDATE]', error)
+    console.log('[BILLBOARD_UPDATE]', error)
     return new NextResponse('Internal error', { status: 500 })
   }
 }
@@ -98,7 +98,7 @@ export async function DELETE(
 
     return NextResponse.json(billboard)
   } catch (error) {
-    console.log('[BILLBOARDS_UPDATE]', error)
+    console.log('[BILLBOARD_DELETE]', error)
     return new NextResponse('Internal error', { status: 500 })
   }
 }
